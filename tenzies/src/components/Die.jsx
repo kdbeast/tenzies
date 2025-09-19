@@ -1,6 +1,9 @@
-const Die = ({ value, isHeld }) => {
+const Die = ({ value, isHeld, hold}) => {
   return (
-    <button style={{ backgroundColor: isHeld === true ? "#59E391" : "white" }}>
+    <button
+      onClick={hold}
+      style={{ backgroundColor: isHeld === true ? "#59E391" : "white" }}
+    >
       {value}
     </button>
   );

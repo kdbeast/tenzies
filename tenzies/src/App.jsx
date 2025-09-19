@@ -17,17 +17,17 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    if (gameWon) {
-      buttonRef.current.focus();
-    }
-  }, [gameWon]);
-
   const [dice, setDice] = useState(() => generateAllNewDice());
 
   let gameWon =
     dice.every((die) => die.isHeld) &&
     dice.every((die) => die.value === dice[0].value);
+    
+  useEffect(() => {
+    if (gameWon) {
+      buttonRef.current.focus();
+    }
+  }, [gameWon]);
 
   const hold = (id) => {
     setDice((prev) =>
